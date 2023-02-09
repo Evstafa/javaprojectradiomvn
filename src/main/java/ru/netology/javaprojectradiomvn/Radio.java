@@ -3,6 +3,16 @@ package ru.netology.javaprojectradiomvn;
 public class Radio {
     private int numberCurrentRadioStation;
     private int currentVolume;
+    private int maxStation;
+
+    public Radio() {
+        maxStation = 10;
+        this.maxStation = maxStation;
+    }
+
+    public Radio(int StationCount) {
+        this.maxStation = StationCount - 1;
+    }
 
     public void next() {
         if (numberCurrentRadioStation != 9) {
@@ -28,7 +38,7 @@ public class Radio {
         if (numberCurrentRadioStation < 0) {
             return;
         }
-        if (numberCurrentRadioStation > 9) {
+        if (numberCurrentRadioStation > maxStation) {
             return;
         }
         this.numberCurrentRadioStation = numberCurrentRadioStation;
